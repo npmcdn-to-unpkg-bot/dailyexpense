@@ -7,11 +7,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css" m/>
-    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
             crossorigin="anonymous"></script>
+    <script src="https://npmcdn.com/core-js/client/shim.min.js"></script>
+    <script src="https://npmcdn.com/zone.js@0.6.12?main=browser"></script>
+    <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
+    <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function(err){ console.error(err); });
+    </script>
 </head>
 <body>
 <div class="wrapper">
@@ -42,10 +51,10 @@
             <div class="x_content">
                 <div class="" role="tabpanel" data-example-id="togglable-tabs">
                     <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                        <li role="presentation" class=""><a href="#tab_content1" id="home-tab" role="tab"
+                        <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab"
                                                             data-toggle="tab" aria-expanded="false">Home</a>
                         </li>
-                        <li role="presentation" class="active"><a href="#tab_content2" role="tab" id="profile-tab"
+                        <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab"
                                                                   data-toggle="tab" aria-expanded="true">Profile</a>
                         </li>
                         <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2"
@@ -53,13 +62,16 @@
                         </li>
                     </ul>
                     <div id="myTabContent" class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade" id="tab_content1" aria-labelledby="home-tab">
+                        <div role="tabpanel" class="tab-pane active in" id="tab_content1" aria-labelledby="home-tab">
+                            <category>
+
+                            </category>
                             <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown
                                 aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan
                                 helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
                                 synth. Cosby sweater eu banh mi, qui irure terr.</p>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade active in" id="tab_content2"
+                        <div role="tabpanel" class="tab-pane fade fade" id="tab_content2"
                              aria-labelledby="profile-tab">
                             <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
                                 Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson
