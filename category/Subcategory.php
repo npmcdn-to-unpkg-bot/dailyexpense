@@ -1,5 +1,5 @@
 <?php
-namespace Daily\SubCategory;
+namespace Daily\Category\SubCategory;
 
 class SubCategory  {
 

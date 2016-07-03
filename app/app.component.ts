@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'category',
-    templateUrl: '../templates/home.php'
+    selector: 'addcategory',
+    templateUrl: '../templates/addcategory.php'
 })
 
 export class AppComponent {
