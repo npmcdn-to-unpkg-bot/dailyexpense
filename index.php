@@ -1,15 +1,7 @@
 <?php
-require_once("./category/Category.php");
 require_once("./category/Subcategory.php");
-require_once("./db.php");
 require_once("./factory/FactoryMethod.php");
-
 //$categories = Daily\FactoryMethod::generateObjects();
-require_once("Users.php");
-$user = new Daily\Users\Users(array("user_id"=>2425));
-
-Daily\Category\Category::setUser($user);
-Daily\Category\Category::getCategoryByUser();
 
 ?>
 <!DOCTYPE html>
@@ -17,6 +9,8 @@ Daily\Category\Category::getCategoryByUser();
 <head>
     <meta charset="UTF-8">
     <title>Title of the document</title>
+        <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -79,10 +73,8 @@ Daily\Category\Category::getCategoryByUser();
                         <div role="tabpanel" class="tab-pane active in" id="tab_content1" aria-labelledby="home-tab">
                             <form method="POST" action="validate.php">
                                 <div class="col-md-6">
-                                <form action="validate.php" method="post">
                                 <addcategory>
                                 </addcategory>
-                                </form>
                                 </div>
                             </form>
                         </div>

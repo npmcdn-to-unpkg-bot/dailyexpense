@@ -44,7 +44,22 @@ class Category  {
 
   public static function getCategoryByUser()
   {
-        
+    global $dbh;
+    $q = 'select * from expense.expense_category_users 
+    where user_id = '.self::$_user->getUserID();
+    $sth = $dbh->prepare($q);
+    $sth->execute();
+    $count = $sth->rowCount();
+    $res = array();
+    if($count > 0 ){
+      for($i=0; $i<$count; $i++){
+        $row = $sth->fetch();
+        $res[$row["id"]] = $row;  
+      }
+      return $res;
+    }
+    else
+      return false;
   }
 }
 

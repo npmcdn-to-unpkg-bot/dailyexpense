@@ -15,7 +15,7 @@ class Users implements categories
     private $_user_id;
     public function __construct($data)
     {
-        !empty($data["user_id"]) ? $this->_user_id = $data["user_id"] : false;
+      !empty($data["user_id"]) ? $this->_user_id = $data["user_id"] :  false;
     }
 
     public function getUserID()
