@@ -24,7 +24,7 @@ $category_users = Daily\Category\Category::getCategoryByUser();
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Date Added<th>
+                            <th></th>
                             <th></th>
                         </tr>
                         </thead>
@@ -33,10 +33,9 @@ $category_users = Daily\Category\Category::getCategoryByUser();
                         if(!empty($category_users)){
                             foreach($category_users as $key => $user){    
                                 echo '<tr #delete'.$user["id"].'>';
-                                  echo '<td>'.$user["name"].'</td>
-                                  <td>'.date("d-m-Y H:i:s", strtotime($user["datetime"])).'</td>
+                                  echo '<td #edit'.$user["id"].'>'.$user["name"].'</td>
                                   <td>
-                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    <a (click)="editCategory($event, edit'.$user["id"].')" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                   </td>                                 
                                   <td><a (click)="deleteCategory(delete'.$user["id"].', '.$user["id"].')" data-id="'.$key.'" target="_blank">
                                   <i class="fa fa-close"></i></a></td>';  
@@ -50,25 +49,24 @@ $category_users = Daily\Category\Category::getCategoryByUser();
             </div>
         </div>
     </div>
-    <div class="x_title" style="margin-bottom:0px;">
+
+    <br />
+    <div class="x_title" style="margin-bottom:0px; border:0;">
         <h2>Add a New Category</h2>
-        <div class="clearfix"></div>
     </div>
     <div class="x_content">
         <div id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
             <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Name<span class="required">*</span>
                 </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="first-name" name="name" required="required" class="form-control input input-sm col-md-7 col-xs-12">
+                <div class="col-md-4 col-sm-5 col-xs-12">
+                    <input type="text" id="first-name" name="name" required="required" class="form-control input input-sm">
                 </div>
+              <div class="col-md-5 col-sm-5 col-xs-12 ">
+                <button type="submit" class="btn btn-sm btn-success">Add a New Category</button>
+              </div>
             </div>
-            <div class="ln_solid"></div>
-            <div class="form-group">
-                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                    <button type="submit" class="btn btn-sm btn-success">Add a New Category</button>
-                </div>
-            </div>
+
 
         </div>
     </div>

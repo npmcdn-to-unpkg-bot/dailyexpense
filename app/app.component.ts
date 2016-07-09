@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Http} from '@angular2/http';
+
 
 
 @Component({
@@ -8,13 +8,26 @@ import {Http} from '@angular2/http';
 })
 
 export class Category {
-    id: int;
-    constructor(){
-    };
+
+    SubCategory: Selection<any>;
+    SubCategoryList: string[];
+
+
     deleteCategory(item, id) {
     	item.remove();
-    	this.id = id;
-    	$.post( "deleteCategory.php", {"id": this.id},  function( data ) {    	
-		});
+    }
+
+    editCategory(event, item){
+        $(item).empty().append('<div class="col-md-6">' +
+            '<form action="test.php"><input type="text" name="name" autofocus class="form-control input-sm" id="subcategory_name"/>' +
+            '</div> <div class="col-md-2">' +
+            '<button class="btn btn-sm btn-primary">Edit</button></div>' +
+            '<div class="col-md-2"><button class="btn btn-sm btn-warning">Cancel</button>' +
+            '</div></form>');
+    }
+
+
+    cancelEvent(){
+        alert("asdf");
     }
 }

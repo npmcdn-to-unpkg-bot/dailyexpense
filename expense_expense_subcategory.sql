@@ -18,7 +18,7 @@
 --
 -- Table structure for table `expense_subcategory`
 --
-
+use expense;
 DROP TABLE IF EXISTS `expense_subcategory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;

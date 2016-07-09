@@ -1,7 +1,6 @@
 <?php
 require_once("./category/Subcategory.php");
 require_once("./factory/FactoryMethod.php");
-//$categories = Daily\FactoryMethod::generateObjects();
 
 ?>
 <!DOCTYPE html>
