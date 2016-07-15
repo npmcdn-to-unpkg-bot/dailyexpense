@@ -7,10 +7,7 @@
  */
 
 $id = $_POST['id'];
-
-
 $del = 'delete from expense.expense_category_users where id = '.$id;
-echo $del;
 require_once("./db.php");
 $sth = $dbh->prepare($del);
 $sth->execute();

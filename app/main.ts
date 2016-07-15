@@ -1,7 +1,7 @@
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 
-import { Category } from './app.component.ts';
-bootstrap(Category);
+import { Daily } from './app.component.ts';
+bootstrap(Daily);
 
 
 /*
