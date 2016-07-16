@@ -10,8 +10,13 @@ require_once("./db.php");
 require_once("Users.php");
 require_once("./category/Category.php");
 $user = new Daily\Users\Users(array("user_id"=>2425));
+
 Daily\Category\Category::setUser($user);
 $category_users = Daily\Category\Category::getCategoryByUser();
+
+Daily\Category\SubCategory\SubCategory::setUser($user);
+$subcategory_users = Daily\Category\SubCategory\SubCategory::getUsersSubCategory();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,6 +50,7 @@ $category_users = Daily\Category\Category::getCategoryByUser();
 </head>
 <body>
 <input type="hidden" value='<?php echo json_encode($category_users)?>' id="user_categories" />
+<input type="hidden" value='<?php echo json_encode($subcategory_users)?>' id="user_subcategories" />
 <div class="wrapper">
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">

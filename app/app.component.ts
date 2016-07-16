@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import {Category} from './category.ts'
-import {ListCategory} from './listcategory.ts'
+import {SubCategory} from './subcategory.ts'
 
 
 @Component({
     selector: 'app',
-    template: '<add></add>',
-    directives: [Category]
+    template: '<add></add><subcategory></subcategory>',
+    directives: [Category, SubCategory]
 })
 
 export class Daily {

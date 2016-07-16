@@ -36,4 +36,48 @@ class dbFunct {
         return $dbh->lastInsertId();
     }
 
+
+    public static function update($table, $data, $where, $types)
+    {
+        if(empty($data)){
+            return false;
+        }
+        global $dbh;
+
+        $q = "update ".$table .' set ';
+
+        foreach($data as $key=>$value){
+            $q .=  $key."=:".strtoupper($key).', ';
+        }
+
+        $q = substr_replace($q ,"",-2).' where ';
+
+        if(is_array($where) && !empty($where)){
+            foreach($where as $key => $value){
+                $q .=  $key .'=:'.strtoupper($key).' and ';
+            }
+            $q = substr_replace($q,"",-4);
+        }
+
+
+        $sth = $dbh->prepare($q);
+
+        foreach($data as $key => $value){
+            $sth->bindValue(':'.strtoupper($key), $value, $types[$key]);
+        }
+
+        if(!empty($where)){
+            foreach($where as $key => $value){
+                $sth->bindValue(':'.strtoupper($key), $value, $types[$key]);
+            }
+        }
+
+        $sth->execute();
+        if(!$sth){
+            return false;
+        }
+        return true;
+
+    }
+
 }

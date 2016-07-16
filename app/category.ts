@@ -32,15 +32,9 @@ import { Component } from '@angular/core';
     '</thead>' +
     '<tbody>' +
     '<tr #t  *ngFor="let item of category">' +
-    '<td [ngStyle]="{display:'+ " flags[item.id] === false  ? 'table-cell': 'none' "+'}">{{item.name}}</td>' +
-    '<td [ngStyle]="{display:'+ " flags[item.id] === false  ? 'table-cell': 'none' "+'}"><a (click)="editCategory($event, item.name, item.id, t, textfield)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>' +
-    '<td [ngStyle]="{display:'+ " flags[item.id] === false  ? 'table-cell': 'none' "+'}"><a (click)="deleteCategory($event, item.id, t)"><i class="fa fa-close"></i></a></td>' +
-    '<td #editform1 [ngStyle]="{display: '+ "flags[item.id] === true ? 'table-cell' : 'none' }"+
-    '"><input #textf autofocus type="text" value="{{item.name}}" class="form-control input-sm" /></td>' +
-    '<td #editform2 [ngStyle]="{display: '+ "flags[item.id] === true ? 'table-cell' : 'none' }"+
-    '"><a (click)="UpdateCategory(item.id, textf.value)" class="btn btn-sm btn-primary">Edit</a></td>' +
-    '<td #editform3 [ngStyle]="{display: '+ "flags[item.id] === true ? 'table-cell' : 'none' }"+
-     '"><a (click)="CancelCategory(item.id)" class="btn btn-sm btn-warning">Cancel</a></td>' +
+    '<td #editform1><input #textf autofocus type="text" value="{{item.name}}" class="form-control input-sm" /></td>' +
+    '<td #editform2><a (click)="UpdateCategory(item.id, textf.value)" class="btn btn-sm btn-primary">Edit</a></td>' +
+    '<td #editform3><a (click)="deleteCategory($event, item.id, t)" class="btn btn-sm btn-danger">Delete</a></td>' +
     '</tr>' +
     '</tbody>' +
     '</table>' +
