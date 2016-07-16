@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 
 
 @Component({
-    selector: 'subcategory',
-    templateUrl: '../templates/listsubcategory.php'
+    selector: 'addexpense',
+    templateUrl: '../templates/expense.php'
 })
 
-export class SubCategory {
+export class Expense {
     subcategory = []
     category = []
     selectedSubCategories: string[]
@@ -20,7 +20,6 @@ export class SubCategory {
                 var t = this.subcategory[k]= [];
                 for(var j in response[k]){
                     t.push({id: response[k][j].id, name: response[k][j].name});
-                    this.flags[j] = false;
                 }
             }
         }
@@ -38,16 +37,6 @@ export class SubCategory {
         this.category_id = v;
     }
 
-    editSub(event, val, id){
-        $.post("../editSubCategory.php", {id: id, val: val}, function (data) {
-        });
-    }
-
-    deleteSub(event, t, id){
-        $.post("../deleteSubCategory.php", {id: id}, function (data) {
-            t.remove();
-        });
-    }
 
 }
 
