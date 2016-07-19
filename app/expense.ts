@@ -12,7 +12,25 @@ export class Expense {
     selectedSubCategories: string[]
     category_id : any;
     flags = [];
+
+
+    ngOnInit() {
+        $('#date_expense').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_4"
+        }, function(start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+    }
+
+
     constructor()   {
+
+
+
+
+
+
         var response = JSON.parse(document.getElementById("user_subcategories").value);
         if (typeof response == 'object') {
             var c = 0;
@@ -30,11 +48,15 @@ export class Expense {
                 this.category.push({id: k, name: response[k]["name"]});
             }
         }
+
+
+
     }
 
     onChangeCategory(v){
         this.selectedSubCategories = this.subcategory[v] !== "undefined" ? this.subcategory[v] : false;
         this.category_id = v;
+
     }
 
 

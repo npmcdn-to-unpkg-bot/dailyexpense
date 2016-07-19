@@ -7,7 +7,7 @@ class Category  {
   private $_id;
   private $_name;
   private $_subcategory = array();
-  private static  $_user;
+  private static $_user;
 
   public function  __construct($data)
   {

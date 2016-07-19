@@ -9,13 +9,19 @@ chdir($path);
 require_once("./db.php");
 require_once("Users.php");
 require_once("./category/Category.php");
-$user = new Daily\Users\Users(array("user_id"=>2425));
-
+$user = new Daily\Users\Users(array("user_id" => 2425));
 Daily\Category\Category::setUser($user);
 $category_users = Daily\Category\Category::getCategoryByUser();
 
 Daily\Category\SubCategory\SubCategory::setUser($user);
 $subcategory_users = Daily\Category\SubCategory\SubCategory::getUsersSubCategory();
+
+require_once("./Expense.php");
+Daily\Expense\Expense::setUser($user);
+$user_expense = Daily\Expense\Expense::getUsersExpense();
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -39,8 +45,10 @@ $subcategory_users = Daily\Category\SubCategory\SubCategory::getUsersSubCategory
   <script src="https://npmcdn.com/zone.js@0.6.12?main=browser"></script>
   <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
   <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
-  <!-- 2. Configure SystemJS -->
   <script src="systemjs.config.js"></script>
+  <script src="js/moment.js"></script>
+  <script src="js/datepicker.js"></script>
+
   <script>
     System.import('app').catch(function (err) {
       alert(err);
@@ -49,8 +57,9 @@ $subcategory_users = Daily\Category\SubCategory\SubCategory::getUsersSubCategory
   </script>
 </head>
 <body>
-<input type="hidden" value='<?php echo json_encode($category_users)?>' id="user_categories" />
-<input type="hidden" value='<?php echo json_encode($subcategory_users)?>' id="user_subcategories" />
+<input type="hidden" value='<?php echo json_encode($category_users) ?>' id="user_categories"/>
+<input type="hidden" value='<?php echo json_encode($subcategory_users) ?>' id="user_subcategories"/>
+<input type="hidden" value='<?php echo json_encode($user_expense) ?>' id="user_expenses"/>
 <div class="wrapper">
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
@@ -91,12 +100,17 @@ $subcategory_users = Daily\Category\SubCategory\SubCategory::getUsersSubCategory
           </ul>
           <div id="myTabContent" class="tab-content">
             <div role="tabpanel" class="tab-pane active in" id="tab_content1" aria-labelledby="home-tab">
-              <form method="POST" action="validate.php">
-                <div class="col-md-6">
-                  <app>
-                  </app>
-                </div>
-              </form>
+              <div class="col-md-6">
+                <app>
+                </app>
+              </div>
+              <div class="col-md-6">
+                <listexpenses>
+                </listexpenses>
+              </div>
+              <div class="col-md-12">
+
+              </div>
             </div>
             <div role="tabpanel" class="tab-pane fade fade" id="tab_content2"
                  aria-labelledby="profile-tab">
@@ -113,7 +127,6 @@ $subcategory_users = Daily\Category\SubCategory\SubCategory::getUsersSubCategory
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
