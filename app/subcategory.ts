@@ -12,6 +12,7 @@ export class SubCategory {
     selectedSubCategories: string[]
     category_id : any;
     flags = [];
+
     constructor()   {
         var response = JSON.parse(document.getElementById("user_subcategories").value);
         if (typeof response == 'object') {

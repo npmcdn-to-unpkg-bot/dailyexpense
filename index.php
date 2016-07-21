@@ -20,9 +20,6 @@ require_once("./Expense.php");
 Daily\Expense\Expense::setUser($user);
 $user_expense = Daily\Expense\Expense::getUsersExpense();
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,7 +45,6 @@ $user_expense = Daily\Expense\Expense::getUsersExpense();
   <script src="systemjs.config.js"></script>
   <script src="js/moment.js"></script>
   <script src="js/datepicker.js"></script>
-
   <script>
     System.import('app').catch(function (err) {
       alert(err);

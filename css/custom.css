@@ -19,19 +19,8 @@ body {
     line-height: 1.471;
 }
 
-.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
-    background: #169F85;
-}
-.btn-success:hover {
-    color: #fff;
-    background-color: #449d44;
-    border-color: #398439;
-}
 
-.btn-success {
-    background: #26B99A;
-    border: 1px solid #169F85;
-}
+
 
 
 ul.to_do {
@@ -163,4 +152,8 @@ ul.to_do li {
 #timeline .timeline-movement .timeline-item .timeline-panel.debits .timeline-panel-ul span.importo {
     color: #e2001a;
     font-size: 1.3em;
+}
+
+.dropdown-menu{
+    z-index: 9999999999;
 }

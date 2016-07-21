@@ -27,10 +27,6 @@ export class Expense {
     constructor()   {
 
 
-
-
-
-
         var response = JSON.parse(document.getElementById("user_subcategories").value);
         if (typeof response == 'object') {
             var c = 0;
