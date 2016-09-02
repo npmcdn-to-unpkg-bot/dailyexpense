@@ -38,10 +38,10 @@ $user_expense = Daily\Expense\Expense::getUsersExpense();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
           integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
           crossorigin="anonymous"></script>
-  <script src="https://npmcdn.com/core-js/client/shim.min.js"></script>
-  <script src="https://npmcdn.com/zone.js@0.6.12?main=browser"></script>
-  <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
-  <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
+  <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+  <script src="https://unpkg.com/zone.js@0.6.12?main=browser"></script>
+  <script src="https://unpkg.com/reflect-metadata@0.1.3"></script>
+  <script src="https://unpkg.com/systemjs@0.19.27/dist/system.src.js"></script>
   <script src="systemjs.config.js"></script>
   <script src="js/moment.js"></script>
   <script src="js/datepicker.js"></script>
